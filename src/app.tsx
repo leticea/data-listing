@@ -11,6 +11,7 @@ import {
   TableHeader,
   TableRow,
 } from "./components/ui/table";
+import { Pagination } from "./components/pagination";
 
 export function App() {
   return (
@@ -50,9 +51,9 @@ export function App() {
             </TableRow>
           </TableHeader>
           <TableBody>
-            {Array.from({ length: 10 }).map(() => {
+            {Array.from({ length: 10 }).map((value, index) => {
               return (
-                <TableRow>
+                <TableRow key={index}>
                   <TableCell></TableCell>
                   <TableCell>
                     <div className="flex flex-col gap-0.5">
@@ -73,6 +74,8 @@ export function App() {
             })}
           </TableBody>
         </Table>
+
+        <Pagination />
       </main>
     </div>
   );
