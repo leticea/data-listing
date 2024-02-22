@@ -12,8 +12,23 @@ import {
   TableRow,
 } from "./components/ui/table";
 import { Pagination } from "./components/pagination";
+import { useQuery } from "@tanstack/react-query";
 
 export function App() {
+  const { data: tagsResponse, isLoading } = useQuery({
+    queryKey: ["get-tags"],
+    queryFn: async () => {
+      const response = await fetch(
+        "http://localhost:3333/tags?_page=1&_per_page=10"
+      );
+      const data = await response.json();
+
+      console.log(data);
+
+      return data;
+    },
+  });
+
   return (
     <div className="py-10 space-y-8">
       <div>
