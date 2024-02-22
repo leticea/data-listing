@@ -80,19 +80,19 @@ export function Pagination({ items, page, pages }: PaginationProps) {
         </span>
 
         <div className="space-x-1.5">
-          <Button onClick={firstPage} size="icon" disabled>
+          <Button onClick={firstPage} size="icon" disabled={page - 1 <= 0}>
             <ChevronsLeft className="size-4" />
             <span className="sr-only">First page</span>
           </Button>
-          <Button onClick={previousPage} size="icon" disabled>
+          <Button onClick={previousPage} size="icon" disabled={page - 1 <= 0}>
             <ChevronLeft className="size-4" />
             <span className="sr-only">Previous page</span>
           </Button>
-          <Button onClick={nextPage} size="icon">
+          <Button onClick={nextPage} size="icon" disabled={page + 1 > pages}>
             <ChevronRight className="size-4" />
             <span className="sr-only">Next page</span>
           </Button>
-          <Button onClick={lastPage} size="icon">
+          <Button onClick={lastPage} size="icon" disabled={page + 1 > pages}>
             <ChevronsRight className="size-4" />
             <span className="sr-only">Last page</span>
           </Button>
