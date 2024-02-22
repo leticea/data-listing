@@ -14,8 +14,7 @@ import {
 import { Pagination } from "./components/pagination";
 import { useQuery, keepPreviousData } from "@tanstack/react-query";
 import { useSearchParams } from "react-router-dom";
-import { useEffect, useState } from "react";
-import useDebounceValue from "./hooks/use-debounce-value";
+import { useState } from "react";
 
 export interface TagResponse {
   first: number;
