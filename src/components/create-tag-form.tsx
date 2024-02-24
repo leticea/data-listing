@@ -28,8 +28,6 @@ export function CreateTagForm() {
   const slug = watch("title") ? getSlugFromString(watch("title")) : "";
 
   async function createTag({ title }: CreateTagSchema) {
-    console.log({ name, slug });
-
     await fetch("http://localhost:3333/tags", {
       method: "POST",
       body: JSON.stringify({
