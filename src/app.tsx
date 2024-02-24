@@ -62,7 +62,7 @@ export function App() {
       );
       const data = await response.json();
 
-      await new Promise((resolve) => setTimeout(resolve, 2000));
+      // await new Promise((resolve) => setTimeout(resolve, 2000));
 
       return data;
     },
