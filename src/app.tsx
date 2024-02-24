@@ -91,10 +91,23 @@ export function App() {
       <main className="max-w-6xl mx-auto space-y-5">
         <div className="flex items-center gap-3">
           <h1 className="text-xl font-bold">Tags</h1>
-          <Button variant="primary">
-            <Plus className="size-3" />
-            Create new
-          </Button>
+          <Dialog.Root>
+            <Dialog.Trigger asChild>
+              <Button variant="primary">
+                <Plus className="size-3" />
+                Create new
+              </Button>
+            </Dialog.Trigger>
+
+            <Dialog.Portal>
+              <Dialog.Overlay />
+              <Dialog.Content>
+                <Dialog.Title />
+                <Dialog.Description />
+                <Dialog.Close />
+              </Dialog.Content>
+            </Dialog.Portal>
+          </Dialog.Root>
 
           {isFetching && (
             <Loader2 className="size-4 animate-spin text-zinc-500" />
