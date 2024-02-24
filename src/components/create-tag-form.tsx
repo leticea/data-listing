@@ -3,6 +3,7 @@ import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Check, X } from "lucide-react";
 import { Button } from "./ui/button";
+import * as Dialog from "@radix-ui/react-dialog";
 
 const createTagSchema = z.object({
   name: z.string().min(3, { message: "Minimum 3 characters." }),
@@ -48,10 +49,13 @@ export function CreateTagForm() {
       </div>
 
       <div className="flex items-center justify-end gap-2">
-        <Button>
-          <X className="size-3" />
-          Cancel
-        </Button>
+        <Dialog.Close asChild>
+          <Button>
+            <X className="size-3" />
+            Cancel
+          </Button>
+        </Dialog.Close>
+
         <Button className="bg-teal-400 text-teal-950" type="submit">
           <Check className="size-3" />
           Save
