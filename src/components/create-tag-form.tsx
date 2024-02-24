@@ -13,13 +13,15 @@ const createTagSchema = z.object({
 type CreateTagSchema = z.infer<typeof createTagSchema>;
 
 export function CreateTagForm() {
-  const { register, handleSubmit } = useForm<CreateTagSchema>({
+  const { register, handleSubmit, watch } = useForm<CreateTagSchema>({
     resolver: zodResolver(createTagSchema),
   });
 
   function createTag(data: CreateTagSchema) {
     console.log(data);
   }
+
+  const slug = watch("name");
 
   return (
     <form onSubmit={handleSubmit(createTag)} className="w-full space-y-6">
@@ -43,6 +45,7 @@ export function CreateTagForm() {
           {...register("slug")}
           id="slug"
           type="text"
+          value={slug}
           className="border border-zinc-800 rounded-lg px-3 py-2 bg-zinc-800/50 w-full text-sm"
           readOnly
         />
