@@ -1,17 +1,36 @@
+import { useForm } from "react-hook-form";
+import { z } from "zod";
+import { zodResolver } from "@hookform/resolvers/zod";
 import { Check, X } from "lucide-react";
 import { Button } from "./ui/button";
 
+const createTagSchema = z.object({
+  name: z.string().min(3, { message: "Minimum 3 characters." }),
+  slug: z.string(),
+});
+
+type CreateTagSchema = z.infer<typeof createTagSchema>;
+
 export function CreateTagForm() {
+  const { register, handleSubmit } = useForm<CreateTagSchema>({
+    resolver: zodResolver(createTagSchema),
+  });
+
+  function createTag(data: CreateTagSchema) {
+    console.log(data);
+  }
+
   return (
-    <form className="w-full space-y-6">
+    <form onSubmit={handleSubmit(createTag)} className="w-full space-y-6">
       <div className="space-y-2">
         <label className="text-sm font-medium block" htmlFor="name">
           Tag name
         </label>
         <input
+          {...register("name")}
           id="name"
           type="text"
-          className="border border-zinc-800 rounded-lg px-3 py-2 bg-zinc-800/50 w-full"
+          className="border border-zinc-800 rounded-lg px-3 py-2.5 bg-zinc-800/50 w-full text-sm"
         />
       </div>
 
@@ -20,9 +39,10 @@ export function CreateTagForm() {
           Slug
         </label>
         <input
+          {...register("slug")}
           id="slug"
           type="text"
-          className="border border-zinc-800 rounded-lg px-3 py-2 bg-zinc-800/50 w-full"
+          className="border border-zinc-800 rounded-lg px-3 py-2 bg-zinc-800/50 w-full text-sm"
           readOnly
         />
       </div>
