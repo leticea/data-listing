@@ -100,10 +100,14 @@ export function App() {
             </Dialog.Trigger>
 
             <Dialog.Portal>
-              <Dialog.Overlay />
-              <Dialog.Content>
-                <Dialog.Title />
-                <Dialog.Description />
+              <Dialog.Overlay className="fixed inset-0 bg-black/70" />
+              <Dialog.Content className="fixed right-0 top-0 bottom-0 h-screen min-w-[320px] z-10 bg-zinc-950 border-l border-zinc-900">
+                <Dialog.Title className="text-xl font-bold">
+                  Create tag
+                </Dialog.Title>
+                <Dialog.Description className="text-sm text-zinc-500">
+                  Tags can be used to group videos about similar concepts
+                </Dialog.Description>
                 <Dialog.Close />
               </Dialog.Content>
             </Dialog.Portal>
