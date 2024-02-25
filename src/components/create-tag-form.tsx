@@ -75,7 +75,6 @@ export function CreateTagForm() {
           </p>
         )}
       </div>
-
       <div className="space-y-2">
         <label className="text-sm font-medium block" htmlFor="slug">
           Slug
@@ -88,7 +87,6 @@ export function CreateTagForm() {
           className="border border-zinc-800 rounded-lg px-3 py-2 bg-zinc-800/50 w-full text-sm"
         />
       </div>
-
       <div className="flex items-center justify-end gap-2">
         <Dialog.Close asChild>
           <Button>
@@ -96,7 +94,6 @@ export function CreateTagForm() {
             Cancel
           </Button>
         </Dialog.Close>
-
         <Button
           disabled={formState.isSubmitting}
           className="bg-teal-400 text-teal-950"

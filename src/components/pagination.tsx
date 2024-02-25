@@ -4,7 +4,6 @@ import {
   ChevronsLeft,
   ChevronsRight,
 } from "lucide-react";
-
 import { useSearchParams } from "react-router-dom";
 import { Button } from "./ui/button";
 import { Select, SelectContent, SelectItem, SelectTrigger } from "./ui/select";
@@ -74,11 +73,9 @@ export function Pagination({ items, page, pages }: PaginationProps) {
             </SelectContent>
           </Select>
         </div>
-
         <span>
           Page {page} of {pages}
         </span>
-
         <div className="space-x-1.5">
           <Button onClick={firstPage} size="icon" disabled={page - 1 <= 0}>
             <ChevronsLeft className="size-4" />

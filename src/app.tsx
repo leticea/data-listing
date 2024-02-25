@@ -117,7 +117,6 @@ export function App() {
               </Dialog.Content>
             </Dialog.Portal>
           </Dialog.Root>
-
           {isFetching && (
             <Loader2 className="size-4 animate-spin text-zinc-500" />
           )}
