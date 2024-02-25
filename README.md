@@ -29,7 +29,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 ## 💻 Projeto
 
-Projeto desenvolvido com React de um formulário que permite o cadastro de uma tag, com validação de dados e controle de estados.
+Projeto desenvolvido com React de um formulário que permite o cadastro de uma tag, com validação de dados, filtragem de dados e controle de estados.
 
 - Aula feita gratuita no canal da [Rocketseat](https://www.youtube.com/@rocketseat).
 
