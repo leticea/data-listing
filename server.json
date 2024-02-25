@@ -323,6 +323,18 @@
       "title": "deve aparecer na lista sozinho",
       "slug": "deve-aparecer-na-lista-sozinho",
       "amountOfVideos": 0
+    },
+    {
+      "id": "3f62",
+      "title": "teste again",
+      "slug": "teste-again",
+      "amountOfVideos": 0
+    },
+    {
+      "id": "5b7d",
+      "title": "Vídeo aula de Diego na Rocketseat",
+      "slug": "video-aula-de-diego-na-rocketseat",
+      "amountOfVideos": 0
     }
   ]
 }
